@@ -363,7 +363,7 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/block-patterns.php';
 
 /**
- * Create Custom posttype for Helm courses 
+ * Create Custom posttype for Helm courses and testimonials
  */
 
 function create_posttype() {
@@ -376,6 +376,17 @@ function create_posttype() {
 		'public' => true,
 		'has_archive' => true,
 		'rewrite' => array('slug' => 'courses'),
+	  )
+	);
+	register_post_type( 'wpnetera_testimonial',
+	  array(
+		'labels' => array(
+		  'name' => __( 'Helm Testimonials' ),
+		  'singular_name' => __( 'Helm Testimonial' )
+		),
+		'public' => true,
+		'has_archive' => false,
+		'rewrite' => array('slug' => 'testimonials'),
 	  )
 	);
   }
