@@ -363,19 +363,19 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/block-patterns.php';
 
 /**
- * Create Custom posttype for Masajid projects 
+ * Create Custom posttype for Helm courses 
  */
 
 function create_posttype() {
-	register_post_type( 'wpnetera_project',
+	register_post_type( 'wpnetera_course',
 	  array(
 		'labels' => array(
-		  'name' => __( 'Masajid Projects' ),
-		  'singular_name' => __( 'Masajid Project' )
+		  'name' => __( 'Helm Courses' ),
+		  'singular_name' => __( 'Helm Course' )
 		),
 		'public' => true,
 		'has_archive' => true,
-		'rewrite' => array('slug' => 'projects'),
+		'rewrite' => array('slug' => 'courses'),
 	  )
 	);
   }
@@ -383,7 +383,7 @@ function create_posttype() {
   add_action( 'init', 'create_posttype' );
 
   /**
-   * Make the Project Image the featured image as well in ACF plugin
+   * Make the Course Image the featured image as well in ACF plugin
    */
 
   function acf_set_featured_image( $value, $post_id, $field  ){
@@ -397,4 +397,4 @@ function create_posttype() {
 }
 
 	// acf/update_value/name={$field_name} - filter for a specific field based on it's name
-	add_filter('acf/update_value/name=project_image', 'acf_set_featured_image', 10, 3);
+	add_filter('acf/update_value/name=course_image', 'acf_set_featured_image', 10, 3);
