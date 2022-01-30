@@ -394,10 +394,10 @@ function create_posttype() {
   add_action( 'init', 'create_posttype' );
 
   /**
-   * Make the Course Image the featured image as well in ACF plugin
+   * Make the Testimonial Image the featured image as well in ACF plugin
    */
 
-  function acf_set_featured_image( $value, $post_id, $field  ){
+  function acf_set_testimonial_image( $value, $post_id, $field  ){
     
     if($value != ''){
 	    //Add the value which is the image ID to the _thumbnail_id meta data for the current post
@@ -408,4 +408,5 @@ function create_posttype() {
 }
 
 	// acf/update_value/name={$field_name} - filter for a specific field based on it's name
-	add_filter('acf/update_value/name=course_image', 'acf_set_featured_image', 10, 3);
+	add_filter('acf/update_value/name=image', 'acf_set_testimonial_image', 10, 3);
+
