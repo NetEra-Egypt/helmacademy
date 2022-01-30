@@ -385,7 +385,7 @@ function create_posttype() {
 		  'singular_name' => __( 'Helm Testimonial' )
 		),
 		'public' => true,
-		'has_archive' => false,
+		'has_archive' => true,
 		'rewrite' => array('slug' => 'testimonials'),
 	  )
 	);
