@@ -383,7 +383,7 @@ function create_posttype() {
 	register_post_type( 'wpnetera_testimonial',
 	  array(
 		'labels' => array(
-		  'name' => __( 'estimonials' ),
+		  'name' => __( 'Testimonials' ),
 		  'singular_name' => __( 'Testimonial' )
 		),
 		'public' => true,
