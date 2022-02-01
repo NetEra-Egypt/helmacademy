@@ -370,23 +370,25 @@ function create_posttype() {
 	register_post_type( 'wpnetera_course',
 	  array(
 		'labels' => array(
-		  'name' => __( 'Helm Courses' ),
-		  'singular_name' => __( 'Helm Course' )
+		  'name' => __( 'Courses' ),
+		  'singular_name' => __( 'Course' )
 		),
+		'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
 		'public' => true,
 		'has_archive' => true,
-		'rewrite' => array('slug' => 'courses'),
+		'rewrite' => array('slug' => 'course'),
+		'taxonomies' => array( 'category' )
 	  )
 	);
 	register_post_type( 'wpnetera_testimonial',
 	  array(
 		'labels' => array(
-		  'name' => __( 'Helm Testimonials' ),
-		  'singular_name' => __( 'Helm Testimonial' )
+		  'name' => __( 'estimonials' ),
+		  'singular_name' => __( 'Testimonial' )
 		),
 		'public' => true,
 		'has_archive' => false,
-		'rewrite' => array('slug' => 'testimonials'),
+		'rewrite' => array('slug' => 'testimonial'),
 	  )
 	);
   }
@@ -405,7 +407,7 @@ function create_posttype() {
     }
  
     return $value;
-}
+	}
 
 	// acf/update_value/name={$field_name} - filter for a specific field based on it's name
 	add_filter('acf/update_value/name=image', 'acf_set_testimonial_image', 10, 3);
