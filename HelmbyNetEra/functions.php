@@ -373,7 +373,7 @@ function create_posttype() {
 		  'name' => __( 'Courses' ),
 		  'singular_name' => __( 'Course' )
 		),
-		'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'revisions', 'custom-fields', ),
+		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
 		'public' => true,
 		'has_archive' => true,
 		'rewrite' => array('slug' => 'course'),
@@ -386,6 +386,7 @@ function create_posttype() {
 		  'name' => __( 'Testimonials' ),
 		  'singular_name' => __( 'Testimonial' )
 		),
+		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
 		'public' => true,
 		'has_archive' => false,
 		'rewrite' => array('slug' => 'testimonial'),
