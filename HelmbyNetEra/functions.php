@@ -373,6 +373,7 @@ function create_posttype() {
 		  'name' => __( 'Courses' ),
 		  'singular_name' => __( 'Course' )
 		),
+		'menu_icon' => 'dashicons-book',
 		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
 		'public' => true,
 		'has_archive' => true,
