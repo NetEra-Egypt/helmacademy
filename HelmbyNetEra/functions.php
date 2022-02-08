@@ -380,18 +380,6 @@ function create_posttype() {
 		'taxonomies' => array( 'category' )
 	  )
 	);
-	// register_post_type( 'wpnetera_testimonial',
-	//   array(
-	// 	'labels' => array(
-	// 	  'name' => __( 'Testimonials' ),
-	// 	  'singular_name' => __( 'Testimonial' )
-	// 	),
-	// 	'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
-	// 	'public' => true,
-	// 	'has_archive' => false,
-	// 	'rewrite' => array('slug' => 'testimonial'),
-	//   )
-	// );
   }
 
   add_action( 'init', 'create_posttype' );
