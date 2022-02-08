@@ -380,36 +380,18 @@ function create_posttype() {
 		'taxonomies' => array( 'category' )
 	  )
 	);
-	register_post_type( 'wpnetera_testimonial',
-	  array(
-		'labels' => array(
-		  'name' => __( 'Testimonials' ),
-		  'singular_name' => __( 'Testimonial' )
-		),
-		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
-		'public' => true,
-		'has_archive' => false,
-		'rewrite' => array('slug' => 'testimonial'),
-	  )
-	);
+	// register_post_type( 'wpnetera_testimonial',
+	//   array(
+	// 	'labels' => array(
+	// 	  'name' => __( 'Testimonials' ),
+	// 	  'singular_name' => __( 'Testimonial' )
+	// 	),
+	// 	'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
+	// 	'public' => true,
+	// 	'has_archive' => false,
+	// 	'rewrite' => array('slug' => 'testimonial'),
+	//   )
+	// );
   }
 
   add_action( 'init', 'create_posttype' );
-
-  /**
-   * Make the Testimonial Image the featured image as well in ACF plugin
-   */
-
-  function acf_set_testimonial_image( $value, $post_id, $field  ){
-    
-    if($value != ''){
-	    //Add the value which is the image ID to the _thumbnail_id meta data for the current post
-	    add_post_meta($post_id, '_thumbnail_id', $value);
-    }
- 
-    return $value;
-	}
-
-	// acf/update_value/name={$field_name} - filter for a specific field based on it's name
-	add_filter('acf/update_value/name=image', 'acf_set_testimonial_image', 10, 3);
-
