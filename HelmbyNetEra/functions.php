@@ -376,7 +376,7 @@ function create_posttype() {
 		'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
 		'public' => true,
 		'has_archive' => true,
-		'rewrite' => array('slug' => 'course'),
+		'rewrite' => array('slug' => 'courses'),
 		'taxonomies' => array( 'category' )
 	  )
 	);
